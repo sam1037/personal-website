@@ -1,0 +1,88 @@
+html {
+    font-family: ui-sans-serif,system-ui,helvetica;
+    height: 100%;
+}
+
+h1 {
+    font-size: 4.5vh;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+main {
+    width: min(56em, 100% - 2em);
+    margin-inline: auto;
+}
+
+#nav-bar {
+    display: flex;
+    user-select: none;
+    border: 1px solid black;
+    justify-content: flex-end;
+}
+
+#nav-bar ul {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0px;
+    margin-right: 2em;
+}
+
+#nav-bar ul li{
+    display: inline-block;
+    padding: 0 1em;
+}
+
+#nav-bar a{
+    color: black;
+    text-decoration: none;
+}
+
+#nav-bar a:hover {
+    background-color: rgb(166, 165, 165);
+}
+
+#logo {
+    max-width: 3em;
+    display: inline;
+    margin-right: auto;
+    margin-left: 2em;
+}
+
+p, li {
+    text-align: left;
+    font-size: 1.125em;
+    line-height: 1.8;
+}
+
+footer {
+    font-size: 1.5rem;
+    opacity: 0.7;
+    position: absolute;
+    bottom: 1rem;
+}
+
+
+
+#course-review {
+    border-style: solid;
+    text-align: center;
+}
+
+#course-review ul{
+    display: inline-block;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.course-title {
+    text-align: left;
+}
+
+.course-info {
+    display: table;
+}
+
