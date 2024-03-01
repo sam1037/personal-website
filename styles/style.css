@@ -1,10 +1,17 @@
 html {
     font-family: ui-sans-serif,system-ui,helvetica;
-    height: 100%;
+    text-size-adjust: auto;
+}
+
+
+article {
+    min-height: calc(100vh - 10rem);
+    margin-bottom: 2rem;
+    font-size: 12rem;
 }
 
 h1 {
-    font-size: 4.5vh;
+    font-size: 2.25rem;
     font-weight: 800;
 }
 
@@ -13,14 +20,13 @@ h2 {
 }
 
 main {
-    width: min(56em, 100% - 2em);
+    width: min(53rem, 100% - 2rem);
     margin-inline: auto;
 }
 
 #nav-bar {
     display: flex;
     user-select: none;
-    border: 1px solid black;
     justify-content: flex-end;
 }
 
@@ -28,7 +34,8 @@ main {
     display: inline-block;
     list-style-type: none;
     padding: 0px;
-    margin-right: 2em;
+    margin: 0px;
+    align-self: center;
 }
 
 #nav-bar ul li{
@@ -46,43 +53,25 @@ main {
 }
 
 #logo {
-    max-width: 3em;
     display: inline;
+    font-size: 40px;
+    line-height: 2rem;
+    align-self: center;
     margin-right: auto;
-    margin-left: 2em;
+    font-weight: 600;
 }
 
 p, li {
     text-align: left;
-    font-size: 1.125em;
+    font-size: 1.125rem;
     line-height: 1.8;
 }
 
 footer {
-    font-size: 1.5rem;
+    font-size: 1.125rem;
+    line-height: 1.5;
     opacity: 0.7;
-    position: absolute;
+    position: relative;
     bottom: 1rem;
-}
-
-
-
-#course-review {
-    border-style: solid;
-    text-align: center;
-}
-
-#course-review ul{
-    display: inline-block;
-    text-align: left;
-    font-size: 1.2rem;
-}
-
-.course-title {
-    text-align: left;
-}
-
-.course-info {
-    display: table;
 }
 
