@@ -1,6 +1,6 @@
 :root {
     --main-width: min(50rem, 100% - 3.5rem);
-    --main-border:
+    --main-border: 
 }
 
 html {
@@ -28,7 +28,6 @@ main {
     margin-inline: auto;
     flex: 1;
     border: var(--main-border);
-    margin-bottom: 2rem;
 }
 
 #nav-bar {
@@ -81,7 +80,9 @@ footer {
     line-height: 1.5;
     opacity: 0.6;
     width: var(--main-width);
-    margin: 1rem auto;
+    margin-inline: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     border: var(--main-border);
 }
 
