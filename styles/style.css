@@ -19,7 +19,7 @@ h2 {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 95vh;
+    min-height: 100vh;
     margin: 0px;
 }
 
@@ -81,6 +81,8 @@ footer {
     opacity: 0.6;
     width: var(--main-width);
     margin-inline: auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
     border: var(--main-border);
 }
 
