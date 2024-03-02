@@ -19,7 +19,7 @@ h2 {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 95vh;
     margin: 0px;
 }
 
