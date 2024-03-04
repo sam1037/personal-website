@@ -1,6 +1,7 @@
 :root {
     --main-width: min(50rem, 100% - 3.5rem);
-    --main-border: 
+    --main-border: ;
+    --link-color: #2f72a8;
 }
 
 html {
@@ -108,3 +109,6 @@ footer {
 }
 
 
+a {
+    color: var(--link-color)
+}
