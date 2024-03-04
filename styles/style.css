@@ -40,13 +40,13 @@ main {
     border: var(--main-border);
 }
 
-#nav-bar ul {
+#menu-ul {
     display: inline-block;
     list-style-type: none;
-    align-self: center;
+    align-self: center;   
 }
 
-#nav-bar ul li{
+#menu-ul li{
     display: inline-block;
     padding-left: 2rem;
 }
@@ -57,7 +57,7 @@ main {
 }
 
 #nav-bar a:hover {
-    background-color: rgb(166, 165, 165);
+    border-bottom: 1px solid black;
 }
 
 #logo {
@@ -85,4 +85,26 @@ footer {
     margin-top: 1rem;
     border: var(--main-border);
 }
+
+#hamburger-button {
+    background-color: transparent;
+    border: none;
+    padding-left: 2rem;
+    display: none;
+}
+
+#ham-menu-ul {
+    display: none;
+}
+
+@media (width< 64rem){ /* nav bar smaller screen*/
+    #menu-ul{
+        visibility: hidden;
+    }
+
+    #hamburger-button {
+        display: inline-block;
+    }
+}
+
 

@@ -3,6 +3,7 @@
 <head>
     <title>sam1037's Personal Website</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="app.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -10,7 +11,16 @@
     </header>
     <nav id="nav-bar">
         <p id="logo"><a href="index.html">SAM1037</a></p>
-        <ul>
+        <ul id="menu-ul">
+            <li><a href="index.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="course_review.html">CUHK course reviews</a></li>
+        </ul>
+        <button id="hamburger-button">
+            <p>三</p>
+        </button>
+
+        <ul id="ham-menu-ul">
             <li><a href="index.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="course_review.html">CUHK course reviews</a></li>
@@ -31,5 +41,7 @@
     <footer>
         This is the personal website of sam1037. Copyright: &copy; 2024 K.S. Ngai.
     </footer>
+    
 </body>
+    
 </html>
