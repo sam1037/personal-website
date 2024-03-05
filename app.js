@@ -13,10 +13,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
         n => n.addEventListener("click", ()=>{
             hamburger.classList.remove("active");
             nav_menu.classList.remove("active");
+            setTimeout(()=>{}, 1000);
         })
     )
     document.querySelector(".nav-logo").addEventListener("click", ()=>{
         hamburger.classList.remove("active");
         nav_menu.classList.remove("active");
+        setTimeout(()=>{}, 1000);
     })
 });
