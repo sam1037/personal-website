@@ -33,6 +33,7 @@ body {
     min-height: 100vh;
     margin: 0px auto;
     width: var(--main-width);
+    overflow: hidden;
 }
 
 main {
@@ -120,6 +121,7 @@ footer {
     .hamburger {
         display: block;
     }
+
 
     .nav-menu {
         position: fixed;
