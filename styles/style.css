@@ -37,6 +37,7 @@ body {
 main {
     flex: 1;
     border: var(--main-border);
+    margin-bottom: 2rem;
 }
 
 .nav-bar {
@@ -110,6 +111,11 @@ footer {
 }
 
 @media (width< 64rem){ /* nav bar smaller screen*/
+    * {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
     .hamburger {
         display: block;
     }
@@ -174,7 +180,7 @@ pre {
 }
 
 pre code {
-    font-size: 1rem;
+    font-size: 0.95em;
 }
 
 
@@ -186,4 +192,12 @@ img {
     display: block;
     margin: 0 auto;
     object-fit: contain;
+}
+
+blockquote {
+    font-style: italic;
+    margin-left: 0;
+    padding-left: 1em;
+    font-size: 0.95em;
+    border-left: 4px solid #2f72a8;
 }
