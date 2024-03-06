@@ -33,7 +33,6 @@ body {
     min-height: 100vh;
     margin: 0px auto;
     width: var(--main-width);
-    overflow: hidden;
 }
 
 main {
@@ -142,6 +141,10 @@ footer {
     .nav-link {
         font-size: 1.5rem;
         line-height: 4rem;
+    }
+
+    body.active {
+        overflow: hidden;
     }
 
     .hamburger.active .bar:nth-child(2) {
