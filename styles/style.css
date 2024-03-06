@@ -2,7 +2,7 @@
     box-sizing: border-box;
     text-align: left;
     font-size: 1.125rem;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 :root {
@@ -18,10 +18,12 @@ html {
 h1 {
     font-size: 2.25rem;
     font-weight: 800;
+    line-height: 1.5;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
 }
 
 body {
@@ -146,9 +148,42 @@ footer {
     .nav-menu.active {
         left: 0;
     }
+
+    img {
+        width: 150%;
+    }
 }
 
 
 a {
     color: var(--link-color)
+}
+
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #2f72a8;
+    color: #666;
+    font-family: monospace;
+    line-height: 1;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 0.5em;
+    display: block;
+}
+
+pre code {
+    font-size: 1rem;
+}
+
+
+.img-wrapper {
+    overflow: auto;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
 }

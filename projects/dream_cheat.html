@@ -25,14 +25,88 @@
     
     <main>
         <article>
-            <h1>Investigation on Dream's cheating</h1>
-            <h2>1. Introduction</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo laboriosam excepturi in minima molestiae mollitia deleniti ipsam iure perferendis nesciunt, adipisci labore id deserunt odit! Aut modi officia eligendi commodi.</p>
-            <h2>2. Goals</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, nisi eligendi ipsa dicta minima ad vitae deleniti officia itaque nemo. Possimus velit, culpa enim itaque animi explicabo modi sequi necessitatibus?</p>
-            <h2>3. Main part</h2>
-            <h2>4. Conclusion</h2>
-            <p><a href="../documents/ESTR2018_project_report.pdf">This</a> is the project report.</p>
+
+            <h1 id="investigation-on-dreams-cheating">Investigation on Dream&#39;s cheating</h1>
+            <h2 id="introduction">Introduction</h2>
+            <p>This is a coursework project for ESTR2018, Probability for Engineers. I collaborated with a classmate in this project.</p>
+            <p>Here&#39;s the background: in October 2020, Dream, a renowned famous Minecraft YouTubers, was accused of cheating during his numerous speedrun attempts because of “being too lucky” in two events: Piglin bartering and collecting blaze rods. Later, the Minecraft 4 Speedrunning Team (MST) published a detailed 29-pages report concluding he cheated. </p>
+            <p>This project showed how MST found Dream guilty of cheating with probability, and suggested how Dream could have remained &quot;unsicipicious&quot; with the help of Central Limit Theorem.</p>
+            <h2 id="piglin-bartering">Piglin bartering</h2>
+            <p>In Minecraft, players can trade with piglins. Each trade have a 20/423 (approximately 0.047) chance of being an ender pearl trade, which is desired by speedrunners. Dream attempted 262 trades, and got 42 ender pearl trades. His odd is approximately 0.16, which is significantly larger than the defualt odd. So that&#39;s pretty unlikely to occur, but how unlikely? </p>
+            <p>Turns out we can use binomial distribution to model the the number of ender pearl trades. The probability of getting 42 or more ender pearl trades out of 262 attempts can be calculated as: 
+            ... = ..., which is extremely low!</p>
+            <h2 id="code-simulation-for-piglin-bartering">Code simulation for piglin bartering</h2>
+            <p>We have coded several simulations in jupyter notebook. You can find the code in <a href="#">this</a> github repo and play around with it. For example, we have simulated 10,000 times, each time having 262 trades, and found that the distribution of the number of ender pear trades is very similar to a binomail distribution, and Dream&#39;s odd is extremely low.</p>
+            <p>We first import the libraries needed (matplotlib for ploting the graph, random and collections for calculations), then set the parameters for the simulations.</p>
+            <pre><code class="language-{python}">import random
+import matplotlib.pyplot as plt
+from collections import Counter
+
+# set the parameters
+number_of_simulation = 10000
+data = [] # storing no. of trades for each trial, elements could repeat
+n = 262
+p = 20/423
+dreams_result = 42 # the number of successful ender pearl trades Dream got
+</code></pre>
+<p>Then we simulate repeatedly, store the result, clean up the data and find the maximum number of ender pearl trades out of 10,000 simulations (for comparasion).</p>
+<pre><code class="language-{python}"># repeat simulation
+for i in range(number_of_simulation):
+    success_num = 0
+    for j in range(n):
+        if random.random() &lt; p:
+            success_num += 1
+    data.append(success_num)
+
+# clean up the data
+dict = Counter(data)
+x_values = list(dict.keys())
+y_values = list(y/number_of_simulation for y in dict.values()) # turn frequency into relative frequency
+
+# find max
+max_x = max(x_values)
+            </code></pre>
+            <p>Finally, we plot the graph with the data simulated using matplotlib.</p>
+            <pre><code class="language-{python}"># plot the graph
+fig = plt.figure(figsize=(12, 8), dpi=80)
+
+plt.bar(x_values, y_values, color=&#39;blue&#39;, alpha=0.5, label=&#39;Binomial(262, 20/423) distribution&#39;)
+plt.title(f&quot;Code simulation for ender pearl trades ({number_of_simulation} simulations)&quot;)
+plt.axvline(dreams_result, color=&#39;r&#39;, linestyle=&#39;--&#39;, ymax = 1, label = &quot;The number of ender pearl trades Dream got (42)&quot;)
+plt.plot([], [], &#39; &#39;, label=f&quot;Maximum number of ender pearl trades out of {number_of_simulation} simulations: {max_x}&quot;)
+
+plt.legend()
+
+plt.xlabel(&quot;Number of ender pearl trades&quot;)
+plt.ylabel(&quot;PMF&quot;)
+#plt.text(50, 0.02, &quot;Red dotted line: The number of ender pearl trades Dream got (42)&quot;, fontsize=8, color=&#39;black&#39;)
+#plt.text(50, 0.01, f&quot;Maximum number of ender pearl trades out of {number_of_simulation} simulations: {max_x}&quot;, fontsize=8, color=&#39;black&#39;)
+plt.show()
+            </code></pre>
+            <div class="img-wrapper">
+                <img src="../images/dream_images/code sim for ender pearl.png"/>
+            </div>
+            
+            <h2 id="blaze-rod">Blaze rod</h2>
+            <p>Similar to piglin batering, Minecraft speedrunners kill blazes to get blaze rods, and a blaze has a 50% chance of dropping blaze rod(s) when killed. For Dream, 211 out of 305 blazes killed dropped blaze rod(s). Repeat the calculations and one can find Dream&#39;s odd to be ...., which is extremely low.</p>
+            <p>The code simulations for blaze rod supports the claim:
+            <div class="img-wrapper">
+                <img src="../images/dream_images/code sim for blaze rod.png"/>
+            </div>
+            <h2 id="how-dream-could-remain-unsuspicious">How Dream could remain &quot;unsuspicious&quot;</h2>
+            <p>This section will discuss how Dream could main &quot;unsuspicious&quot; by lowering his &quot;luck&quot;. </p>
+            <p>We suppose his probability of getting ender pearl trades/ blaze rod drop(s) are mp, where m is a constant &gt; 1 and p is the original probability.</p>
+            <p>We defined &quot;unsuspicious&quot; as the number of ender pearl trades/ blaze rod drop(s) is less than or equal to a lenient threshold of mean + 3 s.d. We also set the goal of being &quot;unsuspicious&quot; 95% of the time. </p>
+            <p>It turns out Central Limit Theorem can be applied here find the values of m. For the detail calculations, please check the <a>report</a>. </p>
+            <p>For blaze rod, we found that Dream could only get 7.79% more blaze rod drop(s) at max while being &quot;unsuspicious&quot;; where as for ender pearl trade, Dream could get 31.3% more.</p>
+            <p>Code simulations are also implemented and the results are as follow:
+            <div class="img-wrapper">
+                <img src="../images/dream_images/code sim for modified blaze rod.png"/>
+            </div>
+            <div class="img-wrapper">
+                <img src="../images/dream_images/code sim for modified ender pearl.png"/>
+            </div>
+
         </article>
     </main>
 
