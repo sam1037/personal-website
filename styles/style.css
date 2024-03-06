@@ -207,3 +207,9 @@ blockquote {
     font-size: 0.95em;
     border-left: 4px solid #2f72a8;
 }
+
+.contact-info {
+    margin-top: 0.5rem;
+    list-style-type: none;
+    padding: 0;
+}
