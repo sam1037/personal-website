@@ -9,6 +9,7 @@
     --main-width: min(53rem, 100% - 3.5rem);
     --main-border: ;
     --link-color: #2f72a8;
+    --code-bg-color: hsl(210, 8%, 90%);
 }
 
 html {
@@ -161,6 +162,10 @@ footer {
         left: 0;
     }
 
+    img.restricted{
+        max-width: 100%;
+        max-height: 100%;
+    }
     img {
         width: 150%;
     }
@@ -187,6 +192,7 @@ pre {
 
 pre code {
     font-size: 0.95em;
+    background-color: #f4f4f4;
 }
 
 
@@ -206,10 +212,27 @@ blockquote {
     padding-left: 1em;
     font-size: 0.95em;
     border-left: 4px solid #2f72a8;
+    margin-bottom: 3rem;
+    margin-top: -1rem;
+}
+
+blockquote p {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .contact-info {
     margin-top: 0.5rem;
     list-style-type: none;
     padding: 0;
+}
+
+code {
+    font-family: monospace;
+    background-color: hsl(210, 8%, 90%);
+}
+
+.bot-commands{
+    list-style-type: none;
+    padding-left: 0;
 }
