@@ -164,10 +164,12 @@ footer {
 
     img.restricted{
         max-width: 100%;
-        max-height: 100%;
+        width: fit-content;
     }
+
     img {
-        width: 150%;
+        width: fit-content;
+        max-width: 125%;
     }
 }
 
@@ -202,8 +204,7 @@ pre code {
 
 img {
     display: block;
-    margin: 0 auto;
-    object-fit: contain;
+    margin: 0 auto 1rem;
 }
 
 blockquote {
