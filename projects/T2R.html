@@ -31,8 +31,11 @@
             <br>The extension can be installed <a href="https://chromewebstore.google.com/detail/time2read-estimator/iknehfokhecdigojenlhkcmbicogohgi?hl=en">here</a> 
             <br>Github link: <a href="https://github.com/sam1037/Time2Read-Estimator">sam1037/Time2Read-Estimator (github.com)</a></p>
             <h2 id="demo-pic">Demo pic</h2>
-            <p>Before:![[Pasted image 20240910234554.png]]
-            After:![[Pasted image 20240910234544.png]]</p>
+            <p>Before:
+            <img src="../images/T2R b4.png" alt="T2R before" style="width: 75%;">
+            After:
+            <img src="../images/T2R after.png" alt="T2R after" style="width: 75%;">
+            </p>
             <h2 id="features">Features</h2>
             <p>The T2R extension has 3 main features:</p>
             <ol>
@@ -42,7 +45,7 @@
             </ol>
             <h2 id="implementation">Implementation</h2>
             <p>implementation for the estimation:
-            <img src="../images/T2R implementation.png" alt="T2R1">
+            <img src="../images/T2R implementation.png" alt="T2R implementation">
             </p>
             <p>implementation for hotkey: <br>
             In the background script, we setup a observer listening for the command. If the command is observed, the observer will send a message to the content script of the current tab using tabs API, requesting content script to remove the estimation from the webpage.</p>
