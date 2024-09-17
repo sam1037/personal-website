@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>sam1037's Personal Website</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="../app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+    </header>
+    <nav class="nav-bar">
+        <a href="../index.html" class="nav-logo">SAM1037</a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a class="nav-link" href="../index.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="../course_review.html">CUHK course reviews</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    
+    <main>
+        <article>
+            <h1>Time2Read estimator: a chrome extension</h1>
+            <h2 id="introduction">Introduction</h2>
+            <p>I built a chrome extension to estimates the time to read articles on websites, named the &quot;Time2Read Estimator&quot;. It was fun building this extension, and exciting to see myself using it on a daily basis. 
+            <br>The extension can be installed <a href="https://chromewebstore.google.com/detail/time2read-estimator/iknehfokhecdigojenlhkcmbicogohgi?hl=en">here</a> 
+            <br>Github link: <a href="https://github.com/sam1037/Time2Read-Estimator">sam1037/Time2Read-Estimator (github.com)</a></p>
+            <h2 id="demo-pic">Demo pic</h2>
+            <p>Before:![[Pasted image 20240910234554.png]]
+            After:![[Pasted image 20240910234544.png]]</p>
+            <h2 id="features">Features</h2>
+            <p>The T2R extension has 3 main features:</p>
+            <ol>
+            <li>estimate the reading time and display it</li>
+            <li>support for chinese articles (other similar extension only works for English)</li>
+            <li>hotkey to toggle the extension</li>
+            </ol>
+            <h2 id="implementation">Implementation</h2>
+            <p>implementation for the estimation:
+            <img src="../images/T2R implementation.png" alt="T2R1">
+            </p>
+            <p>implementation for hotkey: <br>
+            In the background script, we setup a observer listening for the command. If the command is observed, the observer will send a message to the content script of the current tab using tabs API, requesting content script to remove the estimation from the webpage.</p>
+            <h2 id="future-improvements">future improvements</h2>
+            <h2 id="things-learnt-and-difficulties-overcame">Things learnt and difficulties overcame</h2>
+            <p>
+            webpack <br>
+            npm package <br>
+            content script to manipulate elements<br>
+            observer pattern: for PWA<br>
+            message btw bg script and content script<br>
+            </p>
+        </article>
+    </main>
+
+    <footer>
+        Personal website of sam1037. Copyright: &copy; 2024 K.S. Ngai.
+    </footer>
+    
+</body>
+</html>
