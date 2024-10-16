@@ -237,3 +237,26 @@ code {
     list-style-type: none;
     padding-left: 0;
 }
+
+.hide-extra {
+    max-height: 50vh; /* Adjust the height as needed */
+    overflow: hidden;
+    position: relative;
+}
+
+.show-more {
+    display: block;
+    text-align: center;
+    background-color: transparent; /* Transparent background */
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px; /* Add margin to separate from the section */
+    color: #007BFF; /* Text color */
+    font-weight: bold; /* Bold text */
+    border: 2px solid #007BFF; /* Border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#projects, #course-reviews {
+    margin-top: 2rem; 
+}
